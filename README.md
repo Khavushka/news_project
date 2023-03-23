@@ -1,0 +1,2 @@
+<p>Django project</p>
+<p>The news app project is a beginner and intermediate-level project. Each user create this project in a virtual setting before obtaining the news from the News API. Use Bootstrap with Tailwind to give your web app a more endaging appearance. Try Building a backend as well, though, for beginners, we recommend focusing just on the front-end part.</p>
