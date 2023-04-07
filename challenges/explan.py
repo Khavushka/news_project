@@ -27,4 +27,16 @@ while tryagain == True:
     theirchoice = input("Enter a colour: ")
     theirchoice = theirchoice.lower()
     if colour == theirchoice:
-        
+        print("Well done")
+        tryagain = False
+    else:
+        if colour == "red":
+            print("You are feeling Blue right now")
+        elif colour == "green":
+            print("You are Green right now")
+        elif colour == "yellow":
+            print("You are Yellow right now")
+        elif colour == "pink":
+            print("You are Purple right now")
+        else: 
+            print("Shame you are not feeling in the Blue, as you got it wrong!")
