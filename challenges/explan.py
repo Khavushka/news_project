@@ -20,5 +20,11 @@ or " You are probably feeling Blue right now".
 Ask them to guess again; if they have still not got it right, keep giving them the same clue and ask user to enter a colour until they guess it correctly.
 '''
 
-colour = random.choice(['green', 'yellow'])
-print(colour)
+colour = random.choice(['green', 'yellow', 'red', 'pink', 'blue'])
+user_choice = input('Pick one of this colour: ')
+tryagain = True
+while tryagain == True:
+    theirchoice = input("Enter a colour: ")
+    theirchoice = theirchoice.lower()
+    if colour == theirchoice:
+        
