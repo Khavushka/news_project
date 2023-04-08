@@ -14,4 +14,10 @@ for i in live_numbers:
     
 select_numbers = int(input("Select one of the numbers 16, 9, 90, 3: "))
     
+tryagain = True
+while tryagain == True:
+    if num in nums:
+        print("This is in position", nums.index(num))
+    else:
+        print("Not in arrray")
 print(live_numbers)
