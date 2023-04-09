@@ -11,6 +11,7 @@ after gathering the four names, ages and shoe sizes, ask the user to enter the n
 four_names = [{'Susan':{'Ma': 45, "En": 37, "Fr": 54},"Peter":{"Ma":62,"En": 46,"Fr":23}}]
 # print(four_names)
 user = input("Enter name you want to remove from the list: ")
-for user in four_names:
+if user in four_names:
     del four_names[user]
-print(four_names)
+    print(user)
+    print(four_names)
