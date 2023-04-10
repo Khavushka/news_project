@@ -14,4 +14,4 @@ user = input("Enter name you want to remove from the list: ")
 if user in four_names:
     del four_names[user]
     print(user)
-    print(four_names)
+print(four_names)
