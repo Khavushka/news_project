@@ -9,11 +9,15 @@ create the following using a simple 2d list using the standard python indexing.
 after gathering the four names, ages and shoe sizes, ask the user to enter the name of the person they want to remove from the list. delete this row from the data and display the other rows on separate lines
 '''
 four_names = {'Susan':{'Ma': 45, "En": 37},"Peter":{"Ma":62,"En": 46}}
-# print(four_names)
+
 user = input("Enter name you want to remove from the list: ")
 if user in four_names:
     del four_names[user]
-    print(user)
+    
+add_user = input("Enter name you want to add to the list: ")
+if user in add_user:
+    four_names[user]
+    
 print(four_names)
 
 # second solution
