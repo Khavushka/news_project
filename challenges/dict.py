@@ -13,11 +13,11 @@ four_names = {'Susan':{'Ma': 45, "En": 37},"Peter":{"Ma":62,"En": 46}}
 user = input("Enter name you want to remove from the list: ")
 if user in four_names:
     del four_names[user]
-    
-add_user = input("Enter name you want to add to the list: ")
-if user in add_user:
-    four_names[user]
-    
+added = {}
+for i in range(0, 2):
+    name = input("Enter name: ")
+    age = int(input("Enter age: "))
+    added[name] = {"name"}
 print(four_names)
 
 # second solution
