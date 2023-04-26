@@ -10,7 +10,7 @@ After all the data has been added, ask for an author and display all the books i
 If there are no books by that author in the list, display a suitable message.
 '''
 file = open("Books.csv", "r")
-records = input("Please enter how many records, you want to add to the list: ")
+records = input("Please enter records, you want to add to the list: ")
 reader = csv.reader(file)
 for row in file:
     if records in row:
