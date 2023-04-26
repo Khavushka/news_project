@@ -30,8 +30,11 @@ if count == 0:
         print("There are no books by that author in the list.")
 file.close()
 
-fileRemove = input("Enter book you wanted to delete form list: ")
+fileRemove = input("Enter book you wanted to delete from list: ")
 file = open("Books.csv", "r")
+# print(dir(fileRemove))
 for book in file:
     if fileRemove in str(book):
-        print
+        file.remove()
+    file.write()
+file.close()    
