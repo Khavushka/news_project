@@ -3,6 +3,7 @@ CSV - stands for Comma Separated Values
 '''
 
 import csv
+import os
 
 '''
 Using the Books.csv file, ask the user how many records they want to add to the list and then allow them to add that many.
@@ -20,6 +21,7 @@ for info in range(0, records):
     file.write(str(newrecord))
 file.close()
 
+
 fileSearch = input("Search after book: ")
 file = open("Books.csv", "r")
 count = 0
@@ -30,11 +32,10 @@ if count == 0:
         print("There are no books by that author in the list.")
 file.close()
 
-fileRemove = input("Enter book you wanted to delete from list: ")
+
+fileRemove = input("Enter book you wanted to delete from the list: ")
 file = open("Books.csv", "r")
-# print(dir(fileRemove))
+csv_count = 0
 for book in file:
-    if fileRemove in str(book):
-        file.remove()
-    file.write()
-file.close()    
+   if book[0] != fileRemove:
+       file.writerow(book)
