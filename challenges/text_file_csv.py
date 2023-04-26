@@ -3,7 +3,6 @@ CSV - stands for Comma Separated Values
 '''
 
 import csv
-import os
 
 '''
 Using the Books.csv file, ask the user how many records they want to add to the list and then allow them to add that many.
@@ -33,9 +32,16 @@ if count == 0:
 file.close()
 
 
-fileRemove = input("Enter book you wanted to delete from the list: ")
-file = open("Books.csv", "r")
-csv_count = 0
-for book in file:
-   if book[0] != fileRemove:
-       file.writerow(book)
+filename = "Books.csv"
+row_number = int(input("Enter book you wanted to delete from the list: "))
+
+with open(filename, "r") as file:
+    rows = file.readlines()
+
+# Remove the specified row from the list
+if row_number < len(rows):
+    del rows[row_number]
+
+with open(filename, "w") as file:
+    for row in rows:
+        file.write(row)
