@@ -4,18 +4,18 @@ Advantages:
 - it makes the program simpler to understand as the code is grouped together into chunks
 '''
 
-def get_name():
-    user_name = input("Enter your name: ")
-    return user_name
+# def get_name():
+#     user_name = input("Enter your name: ")
+#     return user_name
 
-def print_Msg(user_name):
-    print("Hello", user_name)
+# def print_Msg(user_name):
+#     print("Hello", user_name)
     
-def main():
-    user_name = get_name()
-    print_Msg(user_name)
+# def main():
+#     user_name = get_name()
+#     print_Msg(user_name)
     
-main()
+# main()
 
 '''
 Display the following menu to the user:
@@ -32,3 +32,15 @@ create another subprogram that will check if the user's answer matches the actua
 if they do not select a relevant option on the first menu you should display a suitable message
 '''
 
+def addition():
+    user_name = input("Enter your name: ")
+    return user_name
+
+def substraction(user_name):
+    print("Hello", user_name)
+    
+def main():
+    user_name = addition()
+    substraction(user_name)
+    
+main()
