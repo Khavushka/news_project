@@ -31,13 +31,17 @@ create another subprogram that will check if the user's answer matches the actua
 
 if they do not select a relevant option on the first menu you should display a suitable message
 '''
-
+print("1.addition")
+print("2.substraction")
+input_user = int(input("Enter 1 or 2: "))
 def addition():
-    user_name = input("Enter your name: ")
-    return user_name
+    if input_user == 1:
+        pass
+        
 
-def substraction(user_name):
-    print("Hello", user_name)
+def substraction():
+    if input_user == 2:
+        pass
     
 def main():
     user_name = addition()
