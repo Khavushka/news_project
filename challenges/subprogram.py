@@ -83,20 +83,31 @@ enter the number of your selection:
 if the user selects 1, allow them to add to a file called Salaries.csv which will store their name and salary. If they select 2 it should display all records in the Salaries.csv file. If they select 3 it incorrect option they should see an error message. They should keep returning to the menu until they select option 3.
 '''
 
+import csv
+
 def add():
-    pass
+    file = open('Salaries.csv', 'a')
+    name = input("Enter your name: ")
+    salary = int(input("Enter your salary: "))
+    newRecords = name + ", " + salary + "\n"
+    file.write(str(newRecords))
+    file.close()
 
 def view():
-    pass
+    file = open('Salaries.csv', 'r')
+    reader = csv.reader(file)
+    rows = list(reader)
+    print(rows)
+    file.close()
 
 def main():
     print("1) add to file")
     print("2) view all records")
     selection = ("Enter the number of your selection: ")
     if selection == "1":
-        pass
+        add()
     elif selection == "2":
-        pass
+        view()
     else:
         print("Incorrect selection")
 
