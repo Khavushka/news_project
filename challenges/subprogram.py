@@ -75,3 +75,29 @@ if they do not select a relevant option on the first menu you should display a s
 #         print("Incorrect selection")
         
 # main()
+
+'''
+create the following menu: 1. add to file, 2. view all records, 3. quit program
+enter the number of your selection:
+
+if the user selects 1, allow them to add to a file called Salaries.csv which will store their name and salary. If they select 2 it should display all records in the Salaries.csv file. If they select 3 it incorrect option they should see an error message. They should keep returning to the menu until they select option 3.
+'''
+
+def add():
+    pass
+
+def view():
+    pass
+
+def main():
+    print("1) add to file")
+    print("2) view all records")
+    selection = ("Enter the number of your selection: ")
+    if selection == "1":
+        pass
+    elif selection == "2":
+        pass
+    else:
+        print("Incorrect selection")
+
+main()
