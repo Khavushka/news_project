@@ -31,38 +31,47 @@ create another subprogram that will check if the user's answer matches the actua
 
 if they do not select a relevant option on the first menu you should display a suitable message
 '''
-import random
+# import random
 
-# print("1.addition")
-# print("2.substraction")
-# input_user = int(input("Enter 1 or 2: "))
-def addition():
-    num1 = random.randint(5,20)
-    num2 = random.randint(5,20)
-    print(num1, "+", num2, "=")
-    user_answer = int(input("Your answer: "))
-    actual_answer = num1 + num2
-    answers = (user_answer, actual_answer)
-    return answers
+# # print("1.addition")
+# # print("2.substraction")
+# # input_user = int(input("Enter 1 or 2: "))
+# def addition():
+#     num1 = random.randint(5,20)
+#     num2 = random.randint(5,20)
+#     print(num1, "+", num2, "=")
+#     user_answer = int(input("Your answer: "))
+#     actual_answer = num1 + num2
+#     answers = (user_answer, actual_answer)
+#     return answers
         
 
-def substraction():
-    num1 = random.randint(25, 50)
-    num2 = random.randint(25, 50)
-    print(num1, "-", num2, "=")
-    user_answer = int(input("Your answer: "))
-    actual_answer = num1 - num2
-    answers = (user_answer, actual_answer)
-    return answers
+# def substraction():
+#     num1 = random.randint(25, 50)
+#     num2 = random.randint(25, 50)
+#     print(num1, "-", num2, "=")
+#     user_answer = int(input("Your answer: "))
+#     actual_answer = num1 - num2
+#     answers = (user_answer, actual_answer)
+#     return answers
 
-def check_answer(user_answer, actual_answer):
-    if user_answer == actual_answer:
-        print("Correct")
-    else:
-        print("incorrect, the answer", actual_answer)
+# def check_answer(user_answer, actual_answer):
+#     if user_answer == actual_answer:
+#         print("Correct")
+#     else:
+#         print("incorrect, the answer", actual_answer)
     
-def main():
-    user_name = addition()
-    substraction(user_name)
-    
-main()
+# def main():
+#     print("1) Addition")
+#     print("2) Subtraction")
+#     selection = int(input("Enter 1 or 2: "))
+#     if selection == 1:
+#         user_answer, actual_answer = addition()
+#         check_answer(user_answer, actual_answer)
+#     elif selection == 2:
+#         user_answer, actual_answer = substraction()
+#         check_answer(user_answer, actual_answer)
+#     else:
+#         print("Incorrect selection")
+        
+# main()
