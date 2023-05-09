@@ -85,7 +85,7 @@ if the user selects 1, allow them to add to a file called Salaries.csv which wil
 
 import csv
 
-def add():
+def addto():
     file = open('Salaries.csv', 'a')
     name = input("Enter your name: ")
     salary = int(input("Enter your salary: "))
@@ -93,11 +93,10 @@ def add():
     file.write(str(newRecords))
     file.close()
 
-def view():
+def viewfile():
     file = open('Salaries.csv', 'r')
-    reader = csv.reader(file)
-    rows = list(reader)
-    print(rows)
+    for row in file:
+        print(row)
     file.close()
 
 def main():
@@ -105,9 +104,9 @@ def main():
     print("2) view all records")
     selection = ("Enter the number of your selection: ")
     if selection == "1":
-        add()
+        addto()
     elif selection == "2":
-        view()
+        viewfile()
     else:
         print("Incorrect selection")
 
