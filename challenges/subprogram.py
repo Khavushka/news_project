@@ -83,33 +83,47 @@ enter the number of your selection:
 if the user selects 1, allow them to add to a file called Salaries.csv which will store their name and salary. If they select 2 it should display all records in the Salaries.csv file. If they select 3 it incorrect option they should see an error message. They should keep returning to the menu until they select option 3.
 '''
 
+# import csv
+
+# def addto():
+#     file = open('Salaries.csv', 'a')
+#     name = input("Enter your name: ")
+#     salary = int(input("Enter salary: "))
+#     newRecords = name + ", " + str(salary) + ' kr'+ "\n"
+#     file.write(str(newRecords))
+#     file.close()
+
+# def viewfile():
+#     file = open('Salaries.csv', 'r')
+#     for row in file:
+#         print(row)
+#     file.close()
+
+# tryagain = True
+# while tryagain == True:
+#     print('1. add to file')
+#     print('2. view all records')
+#     print('3. quit program')
+#     selection = input('Enter the number of your selection: ')
+#     if selection == '1':
+#         addto()
+#     elif selection == '2':
+#         viewfile()
+#     elif selection == '3':
+#         tryagain = False
+#     else: 
+#         print('Incorrect option')
+
+
+'''
+In Python, it is not technically possible to directly delete a record from a .csv file. Insted you need to save the file to a temporary list in Python, make the changes to the list and then overwrite the origib´nal fire with the temporary list. Then
+Change the previous program to allow you to do this. Your menu should now look like this: 
+1. add to file
+2. view all records 
+3. delete a record
+4. quit program
+
+Enter the number of yoyr selection:
+'''
+
 import csv
-
-def addto():
-    file = open('Salaries.csv', 'a')
-    name = input("Enter your name: ")
-    salary = int(input("Enter your salary: "))
-    newRecords = name + ", " + salary + "\n"
-    file.write(str(newRecords))
-    file.close()
-
-def viewfile():
-    file = open('Salaries.csv', 'r')
-    for row in file:
-        print(row)
-    file.close()
-
-tryagain = True
-while tryagain == True:
-    print('1. add to file')
-    print('2. view all records')
-    print('3. quit program')
-    selection = input('Enter the number of your selection:')
-    if selection == '1':
-        addto()
-    elif selection == '2':
-        viewfile()
-    elif selection == '3':
-        tryagain = False
-    else: 
-        print('Incorrect option')
