@@ -131,8 +131,9 @@ import csv
 def addTo():
     file = open('records.csv', 'a')
     name = input('Enter the name of the record: ')
+    title = input('Enter title: ')
     record = int(input('Enter the year of record: '))
-    newRecords = name + ' - ' + str(record) + '\n'
+    newRecords = name + ' "' + title +'"' +  ' - ' + str(record) + '\n'
     file.write(str(newRecords))
     file.close()
     
@@ -144,9 +145,20 @@ def viewFile():
 
 def deleteRecord():
     file = open('records.csv', 'r')
+    x = 0
+    tmpList = []
     for row in file:
-        writer = csv.writer(row)
-        writer.writerows(viewFile)
+        tmpList.append(row)
+    file.close()
+    for row in tmpList:
+        print(x,row)
+        x = x + 1
+    rowToDelete = int(input('Enter records name: '))
+    del tmpList[rowToDelete]
+    file = open('records.csv', 'w')
+    for row in tmpList:
+        file.write(row)
+    file.close()
         
 tryagain = True
 while tryagain == True:
