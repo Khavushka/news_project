@@ -99,15 +99,17 @@ def viewfile():
         print(row)
     file.close()
 
-def main():
-    print("1) add to file")
-    print("2) view all records")
-    selection = ("Enter the number of your selection: ")
-    if selection == "1":
+tryagain = True
+while tryagain == True:
+    print('1. add to file')
+    print('2. view all records')
+    print('3. quit program')
+    selection = input('Enter the number of your selection:')
+    if selection == '1':
         addto()
-    elif selection == "2":
+    elif selection == '2':
         viewfile()
-    else:
-        print("Incorrect selection")
-
-main()
+    elif selection == '3':
+        tryagain = False
+    else: 
+        print('Incorrect option')
