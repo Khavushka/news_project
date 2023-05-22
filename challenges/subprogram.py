@@ -127,3 +127,43 @@ Enter the number of yoyr selection:
 '''
 
 import csv
+
+def addTo():
+    file = open('records.csv', 'a')
+    name = input('Enter the name of the record: ')
+    record = int(input('Enter the year of record: '))
+    newRecords = name + ' - ' + str(record) + '\n'
+    file.write(str(newRecords))
+    file.close()
+    
+def viewFile():
+    file = open('records.csv', 'r')
+    for row in file:
+        print(row)
+    file.close()
+
+def deleteRecord():
+    file = open('records.csv', 'r')
+    for row in file:
+        writer = csv.writer(row)
+        writer.writerows(viewFile)
+        
+tryagain = True
+while tryagain == True:
+    print('1. add to file')
+    print('2. view all records')
+    print('3. delete a record')
+    print('4. quit program')
+    selection = input('Enter the number of your selection: ')
+    if selection == '1':
+        addTo()
+    elif selection == '2':
+        viewFile()
+    elif selection == '3':
+        deleteRecord()
+    elif selection == '4':
+        tryagain = False
+    else:
+        print('Incorrect option')
+    
+        
