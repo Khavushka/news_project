@@ -153,7 +153,7 @@ def deleteRecord():
     for row in tmpList:
         print(x,row)
         x = x + 1
-    rowToDelete = int(input('Enter records name: '))
+    rowToDelete = int(input('Enter the row number to delete: '))
     del tmpList[rowToDelete]
     file = open('records.csv', 'w')
     for row in tmpList:
