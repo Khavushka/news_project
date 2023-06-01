@@ -123,7 +123,7 @@ Change the previous program to allow you to do this. Your menu should now look l
 3. delete a record
 4. quit program
 
-Enter the number of yoyr selection:
+Enter the number of your selection:
 '''
 
 import csv
