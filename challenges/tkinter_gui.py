@@ -7,7 +7,7 @@ from tkinter import *
 def Call():
     msg = Label(window, text = 'You pressed the button')
     msg.place(x = 30, y = 50)
-    button['bg'] = 'blue'
+    button['bg'] = 'pink'
     button['fg'] = 'white'
     
 window = Tk()
