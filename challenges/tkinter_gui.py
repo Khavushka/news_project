@@ -25,3 +25,6 @@ window.geometry("450x100")
 
 # adds text to the screen displaying the message
 label = Label(text = 'Salam XABA')
+
+# creates a blank entry box. Entry boxes can be used by the user to input data or used to display output
+entry_box = Entry(text = 0)
