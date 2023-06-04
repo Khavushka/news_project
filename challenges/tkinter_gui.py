@@ -19,3 +19,4 @@ window.mainloop()
 # example code
 window = Tk()
 window.title("Window Title")
+window.geometry("450x100")
