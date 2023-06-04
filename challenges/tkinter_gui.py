@@ -4,19 +4,24 @@ A GUI (graphical user interface) makes the program easier to use. It allows you,
 
 from tkinter import *
 
-def Call():
-    msg = Label(window, text = 'You pressed the button')
-    msg.place(x = 30, y = 50)
-    button['bg'] = 'pink'
-    button['fg'] = 'white'
+# def Call():
+#     msg = Label(window, text = 'You pressed the button')
+#     msg.place(x = 30, y = 50)
+#     button['bg'] = 'pink'
+#     button['fg'] = 'white'
     
-window = Tk()
-window.geometry('200x100')
-button = Button(text = 'Press me', command = Call)
-button.place(x = 30, y = 20, width=120, height=25)
-window.mainloop()
+# window = Tk()
+# window.geometry('200x100')
+# button = Button(text = 'Press me', command = Call)
+# button.place(x = 30, y = 20, width=120, height=25)
+# window.mainloop()
 
-# example code
+'''
+Creates a window that will act as the display, referred to as 'window', adds a title and defines the size of the window
+'''
 window = Tk()
 window.title("Window Title")
 window.geometry("450x100")
+
+# adds text to the screen displaying the message
+label = Label(text = 'Salam XABA')
