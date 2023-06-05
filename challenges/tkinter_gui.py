@@ -24,7 +24,13 @@ window.title("Window Title")
 window.geometry("450x100")
 
 # adds text to the screen displaying the message
-label = Label(text = 'Salam XABA')
+#
+# label = Label(text = 'Salam XABA')
 
 # creates a blank entry box. Entry boxes can be used by the user to input data or used to display output
-entry_box = Entry(text = 0)
+#entry_box = Entry(text = 0)
+
+'''
+Create a window that will ask the user to enter their name. When they click on a button it should display the message "Hello" and their name and change the background colour and font colour of the message box.
+'''
+
