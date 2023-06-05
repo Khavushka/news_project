@@ -24,7 +24,6 @@ window.title("Window Title")
 window.geometry("450x100")
 
 # adds text to the screen displaying the message
-#
 # label = Label(text = 'Salam XABA')
 
 # creates a blank entry box. Entry boxes can be used by the user to input data or used to display output
@@ -34,3 +33,14 @@ window.geometry("450x100")
 Create a window that will ask the user to enter their name. When they click on a button it should display the message "Hello" and their name and change the background colour and font colour of the message box.
 '''
 
+def userCall():
+    msg = Label(window, text='Enter your name: ')
+    msg.place(x = 30, y = 50)
+    button['bg'] = 'yellow'
+    button['fg'] = 'green'
+    
+window = Tk()
+window.geometry('200x100')
+button = Button(text = 'Hello', command = userCall)
+button.place(x = 30, y = 20, width = 120, height = 25)
+window.mainloop()
