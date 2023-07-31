@@ -2,7 +2,7 @@
 A GUI (graphical user interface) makes the program easier to use. It allows you, as the programmer, to create screens, text boxes and buttons to help nvigate through the program in a more user-friendly way. Tkinter is a library of features in Python that allows you to do this.
 '''
 
-from tkinter import *
+# from tkinter import *
 
 # def Call():
 #     msg = Label(window, text = 'You pressed the button')
@@ -49,10 +49,12 @@ Create a window that will ask the user to enter their name. When they click on a
 '''
 Create a window that will ask the user to enter their name. When they click on a button it should display the message "Hello2 and their name and change the background colour and font colour of the message box
 '''
+from tkinter import *
 
 def click():
     name = textbox1.get()
-    message = str("Hello " + name)
+    email = textbox3.get()
+    message = str("Hello " + name + email)
     textbox2["bg"] = "red" 
     textbox2["fg"] = "green" 
     textbox2["text"] = message
@@ -67,6 +69,14 @@ textbox1 = Entry(text = "")
 textbox1.place(x = 150, y = 20, width = 200, height = 25)
 textbox1["justify"] = "center"
 textbox1.focus()
+
+label3 = Label(text = "Enter your email: ")
+label3.place(x = 30, y = 20)
+
+textbox3 = Entry(text = "")
+textbox3.place(x = 150, y = 20, width = 200, height = 25)
+textbox3["justify"] = "center"
+textbox3.focus()
 
 button1 = Button(text = "Press me", command = click)
 button1.place(x = 30, y = 50, width = 120, height = 25)
