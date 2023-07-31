@@ -19,9 +19,9 @@ from tkinter import *
 '''
 Creates a window that will act as the display, referred to as 'window', adds a title and defines the size of the window
 '''
-window = Tk()
-window.title("Window Title")
-window.geometry("450x100")
+# window = Tk()
+# window.title("Window Title")
+# window.geometry("450x100")
 
 # adds text to the screen displaying the message
 # label = Label(text = 'Salam XABA')
@@ -47,5 +47,33 @@ Create a window that will ask the user to enter their name. When they click on a
 
 
 '''
-Create 
+Create a window that will ask the user to enter their name. When they click on a button it should display the message "Hello2 and their name and change the background colour and font colour of the message box
 '''
+
+def click():
+    name = textbox1.get()
+    message = str("Hello " + name)
+    textbox2["bg"] = "red" 
+    textbox2["fg"] = "green" 
+    textbox2["text"] = message
+    
+window = Tk()
+window.geometry("500x200")
+
+label1 = Label(text = "Enter your name: ")
+label1.place(x = 30, y = 20)
+
+textbox1 = Entry(text = "")
+textbox1.place(x = 150, y = 20, width = 200, height = 25)
+textbox1["justify"] = "center"
+textbox1.focus()
+
+button1 = Button(text = "Press me", command = click)
+button1.place(x = 30, y = 50, width = 120, height = 25)
+
+textbox2 = Message(text = "")
+textbox2.place(x = 150, y = 50, width = 200, height = 25)
+textbox2["bg"] = "white"
+textbox2["fg"] = "black"
+
+window.mainloop()
