@@ -154,15 +154,29 @@ textbox4.place(x = 150, y = 160, width = 200, height = 100)
 textbox4["bg"] = "white"
 textbox4["fg"] = "black"
 
-
-# userInput1 = int(input("Enter first: "))
-# userInput2 = int(input("Enter second: "))
-# choose = input("+, -, *, /: ")
-
-
 window.mainloop()
+
+# -------------------------------
 
 '''
 Write a program that can be used instead of rolling a six-sided die in a board game. when the user clicks a button it should display a random whole number between 1 to 6 (inclusive)
 '''
-import random
+# from tkinter import *
+# import random
+
+# def die_click():
+#     num = random.randint(1,6)
+#     answer["text"] = num
+    
+# window = Tk()
+# window.title("Roll a dice")
+# window.geometry("100x200")
+
+# button1 = Button(text = "Roll", command = die_click)
+# button1.place(x = 30, y = 30, width = 50, height = 25)
+# answer = Message(text = "")
+# answer.place(x = 40, y = 70, width = 30, height = 25)
+
+# window.mainloop()
+
+# -----------------------------------
