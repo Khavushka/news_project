@@ -88,6 +88,10 @@ def ent_name():
     message = "Hello " + name
     textbox2["text"] = message
     
+def reset_name():
+    textbox1.delete(0, END)
+    textbox1.focus()
+    
 window = Tk()
 window.title("The user enter a name in a text box.")
 window.geometry("450x400")
@@ -103,5 +107,8 @@ button1.place(x = 30, y = 100, width = 120, height = 25)
 
 textbox2 = Message(text = "")
 textbox2.place(x = 150, y = 100, width = 120, height = 150)
+
+clear_button = Button(text = "Clear", command = reset)
+clear_button.place(x = 300, y = 120, width = 50, height = 25)
 
 window.mainloop()
