@@ -97,58 +97,60 @@ def click():
     userInput1 = cifra1.get()
     userInput2 = cifra2.get()
     choose = textbox3.get()
-    message = "This is result: " + userInput1 + choose + userInput2
-    pressbutton["bg"] = "red"
-    pressbutton["fg"] = "green"
-    pressbutton["text"] = message
+    message = "Result is: " + userInput1 + choose + userInput2 + '= '
+    # pressbutton["bg"] = "red"
+    # pressbutton["fg"] = "green"
+    textbox4["text"] = message
 
-def main(userInput1, userInput2, choose):
-    if choose == "+":
-        samlet = userInput1 + userInput2
-    elif choose == "-":
-        samlet = userInput1 - userInput2
-    elif choose == "*":
-        samlet = userInput1 * userInput2
-    elif choose == "/":
-        samlet = userInput1 / userInput2
+def main(cifra1, cifra2, textbox3):
+    if textbox3 == "+":
+        samlet = cifra1 + cifra2
+    elif textbox3 == "-":
+        samlet = cifra1 - cifra2
+    elif textbox3 == "*":
+        samlet = cifra1 * cifra2
+    elif textbox3 == "/":
+        samlet = cifra1 / cifra2
     else:
-        return choose
+        return textbox3
     return samlet
 
-# result = main(userInput1, userInput2, choose)
-# print("This is: ", result)
     
 window =Tk()
-window.geometry("500x300")
+window.geometry("500x400")
 
-label1 = Label(int(input("Enter first: ")))
-label1.place(x = 30, y = 20)
+label1 = Label(text = "Enter first: ")
+label1.place(x = 30, y = 40)
 cifra1 = Entry(text = "")
-cifra1.place(x = 150, y = 20, width = 200, height = 25)
+cifra1.place(x = 150, y = 40, width = 200, height = 25)
 cifra1["justify"] = "center"
 cifra1.focus()
 
-label2 = Label(int(input("Enter second: ")))
-label2.place(x = 30, y = 20)
+label2 = Label(text = "Enter second: ")
+label2.place(x = 30, y = 80)
 cifra2 = Entry(text="")
-cifra2.place(x = 150, y = 50, width = 200, height = 25)
+cifra2.place(x = 150, y = 80, width = 200, height = 25)
 cifra2["justify"] = "center"
 cifra2.focus()
 
-label3 = Label(input("+, -, *, /: "))
-label3.place(x = 30, y = 20)
+label3 = Label(text = "Choose: + - * / ")
+label3.place(x = 30, y = 120)
 textbox3 = Entry(text="")
-textbox3.place(x = 150, y = 50, width = 200, height = 25)
+textbox3.place(x = 150, y = 120, width = 200, height = 25)
 textbox3["justify"] = "center"
 textbox3.focus()
 
-pressbutton = Button(text = "Press me", command = click)
-pressbutton.place(x=30, y=100, width=120, height=25)
+result = main(cifra1, cifra2, textbox3)
+print("This is: ", result)
+
+pressbutton = Button(text = "Result", command = click)
+pressbutton.place(x=30, y=160, width=120, height=25)
 
 textbox4 = Message(text = "")
-textbox4.place(x = 150, y = 100, width = 200, height = 150)
+textbox4.place(x = 150, y = 160, width = 200, height = 100)
 textbox4["bg"] = "white"
 textbox4["fg"] = "black"
+
 
 # userInput1 = int(input("Enter first: "))
 # userInput2 = int(input("Enter second: "))
