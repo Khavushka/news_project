@@ -94,27 +94,17 @@ My Tkinter calculation
 from tkinter import *
 
 def click():
-    userInput1 = cifra1.get()
-    userInput2 = cifra2.get()
+    userInput1 = int(cifra1.get())
+    userInput2 = int(cifra2.get())
     choose = textbox3.get()
-    message = "Result is: " + userInput1 + choose + userInput2 + '= '
-    # pressbutton["bg"] = "red"
-    # pressbutton["fg"] = "green"
-    textbox4["text"] = message
-
-def main(cifra1, cifra2, textbox3):
-    if textbox3 == "+":
-        samlet = cifra1 + cifra2
-    elif textbox3 == "-":
-        samlet = cifra1 - cifra2
-    elif textbox3 == "*":
-        samlet = cifra1 * cifra2
-    elif textbox3 == "/":
-        samlet = cifra1 / cifra2
-    else:
-        return textbox3
-    return samlet
-
+    try:
+        result = main(userInput1, userInput2, choose)
+        message = f"Result is: {userInput1} {choose} {userInput2} = {result}"
+        pressbutton["bg"] = "red"
+        pressbutton["fg"] = "green"
+        textbox4["text"] = message
+    except ValueError:
+        textbox4["text"] = "Invalid input. Please enter valid numbers."
     
 window =Tk()
 window.geometry("500x400")
@@ -139,6 +129,19 @@ textbox3 = Entry(text="")
 textbox3.place(x = 150, y = 120, width = 200, height = 25)
 textbox3["justify"] = "center"
 textbox3.focus()
+
+def main(cifra1, cifra2, textbox3):
+    if textbox3 == "+":
+        samlet = cifra1 + cifra2
+    elif textbox3 == "-":
+        samlet = cifra1 - cifra2
+    elif textbox3 == "*":
+        samlet = cifra1 * cifra2
+    elif textbox3 == "/":
+        samlet = cifra1 / cifra2
+    else:
+        return textbox3
+    return samlet
 
 result = main(cifra1, cifra2, textbox3)
 print("This is: ", result)
