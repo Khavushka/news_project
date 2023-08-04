@@ -5,18 +5,25 @@ from tkinter import *
 
 def converter():
     kilometer = km_box.get()
-    mile = miles_box.get()
+    kilometer = int(kilometer)
+    message = kilometer * 0.6214
     
-window.Tk()
-window.title("Converter between miles and kilometres")
+    
+window = Tk()
+window.title("Distance")
 window.geometry("400x300")
 
 label = Label(text = "Enter kilometer:")
-label.place(x=20, y=20, width=100, height=100)
+label.place(x=20, y=20)
 
 km_box = Entry(text = "")
-km_box.place(x=120, y=20, width=100, height=25)
+km_box.place(x=30, y=50, width=200, height=25)
 km_box.focus()
 
-conveter_to = Button(text="Convert", command=converter)
-conveter_to.place(x=250, y=20, width=100, height=100)
+convert1 = Button(text="Convert miles to km", command=convert1)
+convert1.place(x=30, y=80, width=200, height=25)
+
+convert2 = Button(text = "Convert kilometers to mile", command=convert1)
+
+
+window.mainloop()
