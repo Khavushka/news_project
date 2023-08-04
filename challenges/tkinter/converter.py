@@ -24,7 +24,7 @@ window = Tk()
 window.title("Distance")
 window.geometry("400x300")
 
-label1 = Label(text = "Enter kilometer:")
+label1 = Label(text = "Enter the value you want to convert:")
 label1.place(x=20, y=20)
 
 km_box = Entry(text = "")
