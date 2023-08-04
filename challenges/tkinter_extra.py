@@ -85,30 +85,32 @@ create a window that will ask the user to enter a name in a text box. when they 
 
 def ent_name():
     name = textbox1.get()
-    message = "Hello " + name
-    textbox2["text"] = message
-    
-def reset_name():
+    textbox2.insert(END, name)
     textbox1.delete(0, END)
     textbox1.focus()
     
+def reset_name():
+    textbox2.delete(0, END)
+    textbox1.focus()
+    
 window = Tk()
-window.title("Name list")
-window.geometry("450x400")
+window.title("Names list")
+window.geometry("400x200")
 
-label1 = Label(text = "Enter your name: ")
-label1.place(x = 30, y = 40)
+label1 = Label(text = "Enter your name:")
+label1.place(x = 20, y = 20, width=100, height=25)
 
-textbox1 = Entry(text = "")
-textbox1.place(x = 150, y = 40, width = 200, height = 25)
+textbox1 = Entry(text = 0)
+textbox1.place(x = 120, y = 20, width = 100, height = 25)
+textbox1.focus()
 
-button1 = Button(text = "Press", command = ent_name)
-button1.place(x = 30, y = 100, width = 120, height = 25)
+button1 = Button(text = "Add to list", command = ent_name)
+button1.place(x = 250, y = 20, width = 100, height = 25)
 
-textbox2 = Message(text = "")
-textbox2.place(x = 150, y = 100, width = 120, height = 150)
+textbox2 = Listbox()
+textbox2.place(x = 120, y = 50, width = 100, height = 100)
 
-clear_button = Button(text = "Clear", command = reset)
-clear_button.place(x = 300, y = 120, width = 50, height = 25)
+clear_button = Button(text = "Clear", command = reset_name)
+clear_button.place(x = 250, y = 50, width = 100, height = 25)
 
 window.mainloop()
