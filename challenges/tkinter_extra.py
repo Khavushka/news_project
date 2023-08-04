@@ -93,7 +93,7 @@ def reset_name():
     textbox1.focus()
     
 window = Tk()
-window.title("The user enter a name in a text box.")
+window.title("Name list")
 window.geometry("450x400")
 
 label1 = Label(text = "Enter your name: ")
