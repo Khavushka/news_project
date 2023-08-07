@@ -17,6 +17,9 @@ def is_dig():
 def reset_button():
     textbox2.delete(0, END)
     textbox1.focus()
+    
+def save():
+    pass
 
 window = Tk()
 window.title("GUI")
@@ -40,5 +43,8 @@ textbox2.place(x = 120, y = 50, width = 100, height = 100)
 
 clear_button = Button(text ="Clear", command = reset_button)
 clear_button.place(x = 230, y = 50, width = 100, height = 25)
+
+save_button = Button(text = "Save to .csv file", command = save)
+save_button.place(x = 230, y = 80, width = 100, height = 25)
 
 window.mainloop()
