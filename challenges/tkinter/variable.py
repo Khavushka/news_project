@@ -19,7 +19,14 @@ def reset_button():
     textbox1.focus()
     
 def save():
-    pass
+    file = open("numbers.csv", "w")
+    tmp_list = textbox2.get(0, END)
+    item = 0
+    for x in tmp_list:
+        newrecord = tmp_list[item] + "\n"
+        file.write(str(newrecord))
+        item = item + 1
+    file.close()
 
 window = Tk()
 window.title("GUI")
