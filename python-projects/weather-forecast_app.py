@@ -37,7 +37,7 @@ def display_weather(data):
         
 def main():
     # API key from OpenWeatherMap
-    api_key = "b12661a71e02da25da4110ae513e5354"
+    api_key = "#####################"
     
     # Get the city name from the user
     city = input("Enter the city name: ")
