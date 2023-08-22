@@ -1,58 +1,64 @@
-import tkinter as tk
-import os
-from pygame import mixer
+# for test code 
 
-class MusicPlayer:
-    def __init__(self, root):
-        self.root = root
-        self.root.title("Music Player")
-        self.root.geometry("300x100")
+def is_valid(board, row, col, num):
+    # Check if the number already exists in the row
+    for i in range(9):
+        if board[row][i] == num:
+            return False
 
-        # Initialize Pygame mixer
-        mixer.init()
+    # Check if the number already exists in the column
+    for i in range(9):
+        if board[i][col] == num:
+            return False
 
-        # Create a variable to store the current playing status
-        self.playing = False
+    # Check if the number already exists in the 3x3 grid
+    start_row = (row // 3) * 3
+    start_col = (col // 3) * 3
+    for i in range(3):
+        for j in range(3):
+            if board[start_row + i][start_col + j] == num:
+                return False
 
-        # Create a variable to store the current selected song
-        self.current_song = None
+    return True
 
-        # Create the UI elements
-        self.label = tk.Label(root, text="Music Player")
-        self.label.pack()
+def solve_sudoku(board):
+    for row in range(9):
+        for col in range(9):
+            if board[row][col] == 0:
+                for num in range(1, 10):
+                    if is_valid(board, row, col, num):
+                        board[row][col] = num
 
-        self.play_button = tk.Button(root, text="Play", command=self.play_music)
-        self.play_button.pack()
+                        if solve_sudoku(board):
+                            return True
 
-        self.stop_button = tk.Button(root, text="Stop", command=self.stop_music)
-        self.stop_button.pack()
+                        board[row][col] = 0
 
-        self.browse_button = tk.Button(root, text="Browse", command=self.browse_music)
-        self.browse_button.pack()
+                return False
 
-    def play_music(self):
-        if self.current_song:
-            if not self.playing:
-                mixer.music.load(self.current_song)
-                mixer.music.play()
-                self.play_button.config(text="Pause")
-                self.playing = True
-            else:
-                mixer.music.pause()
-                self.play_button.config(text="Play")
-                self.playing = False
+    return True
 
-    def stop_music(self):
-        mixer.music.stop()
-        self.play_button.config(text="Play")
-        self.playing = False
+def print_board(board):
+    for row in range(9):
+        for col in range(9):
+            print(board[row][col], end=" ")
+        print()
 
-    def browse_music(self):
-        self.current_song = tk.filedialog.askopenfilename(initialdir=os.getcwd(), title="Select Song",
-                                                         filetypes=(("Audio Files", "*.mp3"), ("All Files", "*.*")))
-        self.label.config(text=os.path.basename(self.current_song))
+# Example Sudoku board (0 represents empty cells)
+board = [
+    [5, 3, 0, 0, 7, 0, 0, 0, 0],
+    [6, 0, 0, 1, 9, 5, 0, 0, 0],
+    [0, 9, 8, 0, 0, 0, 0, 6, 0],
+    [8, 0, 0, 0, 6, 0, 0, 0, 3],
+    [4, 0, 0, 8, 0, 3, 0, 0, 1],
+    [7, 0, 0, 0, 2, 0, 0, 0, 6],
+    [0, 6, 0, 0, 0, 0, 2, 8, 0],
+    [0, 0, 0, 4, 1, 9, 0, 0, 5],
+    [0, 0, 0, 0, 8, 0, 0, 7, 9]
+]
 
-if __name__ == '__main__':
-    root = tk.Tk()
-    music_player = MusicPlayer(root)
-    root.mainloop()
+if solve_sudoku(board):
+    print("Sudoku solved:")
+    print_board(board)
+else:
+    print("No solution exists for the given Sudoku board.")
