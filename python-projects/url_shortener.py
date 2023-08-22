@@ -20,7 +20,7 @@ def generate_short_code():
 @app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
-        original_url = reguest.form['url']
+        original_url = request.form['url']
         short_code = generate_short_code()
         
         url_mapping[short_code] = original_url
