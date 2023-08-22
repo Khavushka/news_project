@@ -1,7 +1,3 @@
-'''
-Creating a music player in Python is an excellent way to explore graphical user interface [GUIs]. You can use the Tkinter library to design a basic music player that allows users to browse their music library, play songs, pause, stop, and adjust the volume. This project will hepl you gain insights into event-driven programmering and GUI development
-'''
-
 import tkinter as tk
 import os
 from pygame import mixer
@@ -11,29 +7,29 @@ class MusicPlayer:
         self.root = root
         self.root.title("Music Player")
         self.root.geometry("300x100")
-        
+
         # Initialize Pygame mixer
         mixer.init()
-        
+
         # Create a variable to store the current playing status
         self.playing = False
-        
+
         # Create a variable to store the current selected song
         self.current_song = None
-        
+
         # Create the UI elements
-        self.label = tk.Label(root, text = "Music Player")
+        self.label = tk.Label(root, text="Music Player")
         self.label.pack()
-        
-        self.play_button = tk.Button(root, text = "Play", command = self.play_music)
+
+        self.play_button = tk.Button(root, text="Play", command=self.play_music)
         self.play_button.pack()
-        
-        self.stop_button = tk.Button(root, text = "Stop", command = self.stop_music)
+
+        self.stop_button = tk.Button(root, text="Stop", command=self.stop_music)
         self.stop_button.pack()
-        
-        self.browse_button = tk.Button(root, text = "Browse", command = self.browse_music)
+
+        self.browse_button = tk.Button(root, text="Browse", command=self.browse_music)
         self.browse_button.pack()
-        
+
     def play_music(self):
         if self.current_song:
             if not self.playing:
@@ -45,15 +41,17 @@ class MusicPlayer:
                 mixer.music.pause()
                 self.play_button.config(text="Play")
                 self.playing = False
+
     def stop_music(self):
         mixer.music.stop()
         self.play_button.config(text="Play")
         self.playing = False
-    
+
     def browse_music(self):
-        self.current_song = tk.filedialog.askopenfilename(initialdir = os.getcwd(), title="Select Song", filetypes=(("Audio Files", "*.mp3"), ("All Files", "*.*")))
+        self.current_song = tk.filedialog.askopenfilename(initialdir=os.getcwd(), title="Select Song",
+                                                         filetypes=(("Audio Files", "*.mp3"), ("All Files", "*.*")))
         self.label.config(text=os.path.basename(self.current_song))
-        
+
 if __name__ == '__main__':
     root = tk.Tk()
     music_player = MusicPlayer(root)
