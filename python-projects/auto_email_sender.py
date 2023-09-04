@@ -1,3 +1,4 @@
+# https://medium.com/@hannanmentor/10-python-projects-with-code-da82b5ac7304
 # automatiing repetitive tasks is a common use case for python. in this project, you will build an automated email sender that can send personalized emails to a list of recipients. you will use python's built-in email library to compose and send emails programmatically. this project will provide insights into email protocols, handling attachments, and sending emails in bulk. 
 
 import smtplib
