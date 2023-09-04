@@ -1,3 +1,4 @@
+#  https://medium.com/@hannanmentor/10-python-projects-with-code-da82b5ac7304
 # analyzing stock prices is crucial for investors and traders. in this project, you will create a stock price analyzer using Python and the Yahoo finance API. you will fetch historical stock data, calculate various financial indicators, and visualize the results using charts. this project will enhance your data analysis and visualization skills
 
 
