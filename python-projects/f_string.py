@@ -96,5 +96,27 @@ print(f"prograss % year: {int(day_of_year)/365 * 100:.2f}%")
 
 '''
 4. Repr&str
-if you write OOP in Python
+if you write OOP in Python, you'd be familiar with the dunder methods __repr__ and __str__ 
+the basic idea is:
+__repr__=developer friendly
+__str__= user friendly
+Below is an example of a dataclass Person with name and age attributes. For a dataclass, by default (without a str method defined), printing the object will give you the output of repr. 
+
+With a str the method defined, you'd need to write !r to tell Python to print out the repr method instead.
 '''
+
+print("--------------------Repr&str")
+
+from dataclasses import dataclass 
+
+@dataclass 
+class Person:
+    name : str
+    age : int
+    
+    def __str__(self) -> str:
+        return f"{self.name} is {self.age} years old"
+    
+Eva = Person("Eva E.", 51)
+print(f"{Eva}")  #str
+print(f"{Eva!r}") #repr
