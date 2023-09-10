@@ -1,3 +1,5 @@
+# https://medium.com/bitgrit-data-science-publication/python-f-strings-tricks-you-should-know-7ce094a25d43
+
 # with  in f-strings debugging, you can also perform math operations
 
 '''
