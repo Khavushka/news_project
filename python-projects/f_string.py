@@ -121,4 +121,46 @@ class Person:
     
 Eva = Person("Eva E.", 51)
 print(f"{Eva}")  #str
-print(f"{Eva!r}") #repr
+print(f"{Eva!r}\n") #repr
+
+'''
+5. Alignment
+if you want your variables to be printed at a specific position, alignments are the way to go!
+Notice in the first line number:n 
+Here n stands for the width of space to print the variable number starting from the string "is" (inclusive of the variable iitself)
+you also have options to do a left, center, or right alignment. 
+
+Here left:>20 means given a width of 20 characters print out the string "left text" starting from the left
+
+For center:^20 that means to leave whatever space is left on the left and right. Since the string "centertext!" is 12 characters, the left and right would have four characters of white space. If we put all three strings together with their formatting options, we would have a width of 60 to place the left, center, and right string variables. 
+'''
+
+print("-----------------Alignment")
+
+number = 4
+print(f"number is {number:4}") #width of 10
+
+# numbers
+for number in range(1, 5):
+    print(f"the number is {number:{number}}")
+    
+left = "left text"
+center = "center text!"
+right = "right text"
+
+print(f"{left:>20}") #left align
+print(f"{center:^20}") #center align
+print(f"{right:<20}") #right align
+
+print(f"{left : <20}{center : ^20}{right : >20}")
+
+'''
+6.Multi-line f-string
+just use triple quotes "' and then define anything you want within the f-string. 
+'''
+print("----------------------Multi-line f-string")
+company_name = "FIAT"
+employee_count = 100000
+mission = "To accelerate the world's transition to sustainable energy"
+
+print(f"""  Company: {company_name} # of employees: {employee_count:,} Mission: {mission}""")
