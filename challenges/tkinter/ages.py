@@ -23,7 +23,7 @@ def read_list():
             data = tmp[x]
             name_list.insert(END, data)
             x = x + 1
-            
+        
 window = Tk()
 window.title("People List")
 window.geometry("400x200")
