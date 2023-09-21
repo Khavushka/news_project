@@ -8,18 +8,16 @@
 - added a second image in the lower half of the window which will change to show the photograph of the person selected from the drop-down list when the user clicks on the Click Me button.
 '''
 import tkinter as tk
-import os
-print(os.getcwd())
 
 window = tk.Tk()
 window.title("My Window")
 window.geometry("400x300")
 
 # Define global variables for images
-logo = tk.PhotoImage(file="logo.gif")
-bob_image = tk.PhotoImage(file="Bob.gif")
-sue_image = tk.PhotoImage(file="Sue.gif")
-tim_image = tk.PhotoImage(file="Tim.gif")
+logo = tk.PhotoImage(file=r"challenges\tkinter\logo.gif")
+bob_image = tk.PhotoImage(file=r"challenges\tkinter\logo.gif")
+sue_image = tk.PhotoImage(file=r"challenges\tkinter\logo.gif")
+tim_image = tk.PhotoImage(file=r"challenges\tkinter\logo.gif")
 
 # Function to update the displayed image
 def update_image():
@@ -37,7 +35,7 @@ def update_image():
         photobox["image"] = logo
 
 # Set the window icon
-window.wm_iconbitmap("MyIcon.ico")
+window.wm_iconbitmap(r"challenges\tkinter\stripes.ico")
 
 # Set the background color
 window.configure(background="light green")
