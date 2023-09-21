@@ -8,6 +8,8 @@
 - added a second image in the lower half of the window which will change to show the photograph of the person selected from the drop-down list when the user clicks on the Click Me button.
 '''
 import tkinter as tk
+import os
+print(os.getcwd())
 
 window = tk.Tk()
 window.title("My Window")
