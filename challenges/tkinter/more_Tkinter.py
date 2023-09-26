@@ -11,7 +11,7 @@ import tkinter as tk
 
 window = tk.Tk()
 window.title("My Window")
-window.geometry("400x300")
+window.geometry("600x500")
 
 # Define global variables for images
 logo = tk.PhotoImage(file=r"challenges\tkinter\logo.gif")
