@@ -4,7 +4,12 @@ import csv
 def add_to_list():
     num1 = int(num_box1.get())
     num2 = int(num_box2.get())
-    num_list.insert(END, 0)
+    result = num1 + num2
+    result_str = f"{num1} + {num2} = {result}"
+    num_box1.delete(0, END)
+    num_box2.delete(0, END)
+    num_box1.focus()
+    num_list.insert(END, result_str)
 
 def plus():
     num1 = int(num_box1.get())
@@ -41,17 +46,6 @@ def division():
     num2 = num_box2.get()
     result = num1 / num2
     result_str = f"{num1} / {num2} = {result}"
-    num_box1.delete(0, END)
-    num_box2.delete(0, END)
-    num_box1.focus()
-    num_list.insert(END, result_str)
-    
-
-def subtract():
-    num1 = float(num_box1.get())
-    num2 = float(num_box2.get())
-    result = num1 - num2
-    result_str = f"{num1} - {num2} = {result}"
     num_box1.delete(0, END)
     num_box2.delete(0, END)
     num_box1.focus()
