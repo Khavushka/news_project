@@ -10,6 +10,18 @@ def add_to_list():
     num_box2.delete(0, END)
     num_box1.focus()
     num_list.insert(END, result_str)
+    
+    # if button1:
+    #     num_list.insert(END, result_str)
+    # elif button2:
+    #     num_list.insert(END, result_str)
+    # elif button3:
+    #     num_list.insert(END, result_str)
+    # elif button4:
+    #     num_list.insert(END, result_str)
+    # else:
+    #     return False
+        
 
 def plus():
     num1 = int(num_box1.get())
