@@ -8,14 +8,16 @@ import csv
 def add_to_list():
     person = person_box.get()
     age = int(age_box.get())
-    if person and age:
-        person_list.insert(END, person, age)
-        person_box.delete(0, END)
-        person_box.focus()
-    else:
-        person_box.delete(0, END)
-        age_box.delete(0, END)
-        person_box.focus()
+    # result = person + age
+    result = f"{person}  {age}"
+    person_list.insert(END, result)
+    person_box.delete(0, END)
+    age_box.delete(0, END)
+    person_box.focus()
+    # else:
+    #     person_box.delete(0, END)
+    #     age_box.delete(0, END)
+    #     person_box.focus()
     
 
 def clear_list():
