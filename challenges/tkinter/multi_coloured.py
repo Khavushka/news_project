@@ -14,6 +14,7 @@ def add_to_second():
 window = Tk()
 window.title("More Tkinter")
 window.configure(background="blue")
+window.wm_iconbitmap(r"challenges\tkinter\stripes.ico")
 window.geometry("600x300")
 
 label1 = Label(text="Enter your name:")
