@@ -7,7 +7,9 @@ when the user enters their name and clicks on the Press Me button it should disp
 from tkinter import *
 
 def add_to_second():
-    pass
+    name = name_box1.get()
+    result = f"Hello  {name}"
+    name_list.insert(END, result)
 
 window = Tk()
 window.title("More Tkinter")
@@ -21,4 +23,10 @@ name_box1 = Entry()
 name_box1.place(x=150, y=20, width=100, height=25)
 name_box1.focus()
 
-button1 = Button
+button1 = Button(text="Press Me", command=add_to_second, bg='white', fg='blue')
+button1.place(x=270, y=20, width=100, height=25)
+
+name_list =Listbox()
+name_list.place(x=20, y=90, width=200, height=100)
+
+window.mainloop()
