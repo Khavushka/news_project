@@ -6,7 +6,7 @@ from tkinter import *
 
 def click():
     name = textbox1.get()
-    gender = 
+    gender = pass
 
 window = Tk()
 window.title("drop down list")
