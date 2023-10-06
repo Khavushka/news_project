@@ -5,12 +5,13 @@ Create a program that will ask the user to enter a name and then select the gend
 from tkinter import *
 
 def click():
-    pass
+    name = textbox1.get()
+    gender = 
 
 window = Tk()
 window.title("drop down list")
 window.geometry("450x400")
-window.configure(background="light blue")
+# window.configure(background="light blue")
 
 
 label1 = Label(text="Enter name:")
@@ -21,10 +22,15 @@ textbox1.place(x=150, y=20, width=200, height=25)
 textbox1["justify"] = "center"
 textbox1.focus()
 
-label2 = Label(text="Select tehe gender:")
-label2.place(x=30, y=60, width=120, height=25)
+label_gender = Label(text="Select the gender:")
+label_gender.place(x=50, y=100, width=100, height=25)
+label2 = StringVar(window)
+label2.set("M/F")
+option_list =OptionMenu(window, label2, "one", "two", "tre")
+option_list.place(x=150, y=100)
 
-
+name_list = Listbox()
+name_list.place(x=150, y=150, width=150, height=100)
 
 # ZIP - function to iterate two or more parallel
 # first = [1, 2, 3]
