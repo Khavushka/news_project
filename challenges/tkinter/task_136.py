@@ -4,9 +4,13 @@ Create a program that will ask the user to enter a name and then select the gend
 
 from tkinter import *
 
-def click():
+def add_to_list():
     name = textbox1.get()
-    gender = pass
+    textbox1.delete(0, END)
+    genderselect = label2.get()
+    newdata = name + ", " + genderselect + "\n"
+    name_list.insert(END, newdata)
+    textbox1.focus()
 
 window = Tk()
 window.title("drop down list")
@@ -26,11 +30,14 @@ label_gender = Label(text="Select the gender:")
 label_gender.place(x=50, y=100, width=100, height=25)
 label2 = StringVar(window)
 label2.set("M/F")
-option_list =OptionMenu(window, label2, "one", "two", "tre")
+option_list =OptionMenu(window, label2, "M", "F")
 option_list.place(x=150, y=100)
 
 name_list = Listbox()
 name_list.place(x=150, y=150, width=150, height=100)
+
+addbtn = Button(text = "Add to list", command = add_to_list)
+addbtn.place(x=50, y=300, width=100, height=25)
 
 # ZIP - function to iterate two or more parallel
 # first = [1, 2, 3]
