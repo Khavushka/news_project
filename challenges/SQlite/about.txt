@@ -1,0 +1,17 @@
+SQL stands for 'structured query language' and is the main language that the large database packages use. SQLite is free software that can be used as an SQL database. you can download the latest version of the software from www.sqlite.org
+
+we will use the example of a small manufacturing company that stores the details of their employees in an SQL database.
+
+creating a table, you need to identify the following for each field:
+- the name of the field (field names cannot contain spaces and must follow the same rules as variable names);
+- if it is a primary key;
+- the data type for that field.
+
+the data types you can use are as follows:
+- integer: the value is an integer value;
+- real: the value is a floating-point value;
+- text: the value is a text string;
+- blob: the value is stored exactly as it was input. 
+You can also specify if the field cannot be left blank by adding NOT NULL to the end of the field when you create it.
+
+
