@@ -2,7 +2,7 @@
 import sqlite3
 
 # connects to the company database. If no such database exists, it will create one. The file will be stored in the same folder as the program.
-with sqlite3.connect("company.db") as db:
+with sqlite3.connect(r"db\company.db") as db:
     cursor=db.cursor()
     
 
@@ -16,7 +16,7 @@ cursor.execute("""CREATE TABLE IF NOT EXISTS employees (
 
 # Inserts data into the employees table. The db.commit() line saves the changes.
 cursor.execute("""INSERT INTO employees (id, name, dept, salary)
-               VALUES("1","Bob", "Sales","25000")""")
+               VALUES("2","Gob", "Sales","25000")""")
 db.commit()
 
 # allows a user to enter new data which is then inserted into the table

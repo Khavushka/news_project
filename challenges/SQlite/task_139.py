@@ -3,7 +3,7 @@ create an SQL database called PhoneBook that contains  a table called Names with
 '''
 import sqlite3
 
-with sqlite3.connect("PhoneBook.db") as db:
+with sqlite3.connect(r"db\PhoneBook.db") as db:
     cursor = db.cursor()
     
 cursor.execute("""CREATE TABLE IF NOT EXISTS Names (
@@ -13,15 +13,15 @@ cursor.execute("""CREATE TABLE IF NOT EXISTS Names (
     phonenumber text);""")
 
 cursor.execute(""" INSERT INTO Names (id, firstname, surname, phonenumber) 
-               VALUES("1", "Howels", "Phillips", "01954 395773")""")
+               VALUES("4", "Howels", "Phillips", "01954 395773")""")
 db.commit()
 
 cursor.execute(""" INSERT INTO Names (id, firstname, surname, phonenumber) 
-               VALUES("2", "Karen", "Phillips", "01954 295773")""")
+               VALUES("5", "Karen", "Phillips", "01954 295773")""")
 db.commit()
 
 cursor.execute(""" INSERT INTO Names (id, firstname, surname, phonenumber) 
-               VALUES("3", "Anne", "Phillips", "01954 495773")""")
+               VALUES("6", "Anne", "Phillips", "01954 495773")""")
 db.commit()
 
 db.close()
