@@ -6,7 +6,7 @@ the second should be called Books and contain the following data.
 import sqlite3
 
 def viewphonebook():
-    cursor.execute("SELECT * FROM Names")
+    cursor.execute("SELECT * FROM Authors")
     for x in cursor.fetchall():
         print(x)
     
@@ -14,19 +14,19 @@ def addtophonebook():
     newid = int(input("Enter ID: "))
     newfname = input("Enter book name: ")
     newsname = input("Enter Author: ")
-    cursor.execute("""INSERT INTO Names (id,Bookname,Authors) VALUES (?,?,?)""", (newid, newfname, newsname))
+    cursor.execute("""INSERT INTO Authors(id,Bookname,Author) VALUES (?,?,?)""", (newid, newfname, newsname))
     db.commit()
     
 def selectname():
     selectsurname = input("Enter a surname: ")
-    cursor.execute("SELECT * FROM Names WHERE surname = ?", [selectsurname])
+    cursor.execute("SELECT * FROM Authors WHERE Author = ?", [selectsurname])
     for x in cursor.fetchall():
         print(x)
             
 def deletedata():
     selectid = int(input("Enter ID: "))
-    cursor.execute("DELETE FROM Names WHERE id = ?", [selectid])
-    cursor.execute("SELECT * FROM Names")
+    cursor.execute("DELETE FROM Authors WHERE id = ?", [selectid])
+    cursor.execute("SELECT * FROM Authors")
     for x in cursor.fetchall():
         print(x)
     db.commit()
@@ -35,10 +35,12 @@ def deletedata():
 with sqlite3.connect(r"db\Bookinfo.db") as db:
     cursor = db.cursor()
     
-cursor.execute("""CREATE TABLE IF NOT EXISTS Names (
+cursor.execute("""CREATE TABLE IF NOT EXISTS Authors(
     id integer PRIMARY KEY,
     Bookname text,
-    Authors text);""")
+    Author text);""")
+
+# cursor.execute("""INSERT INTO Authors(id, Bookname, Author)Values("567, Dublin, J.K.Rowling")""")
     
 def main():
     again = "y"
